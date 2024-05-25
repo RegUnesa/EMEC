@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-#from sqlalchemy import create_engine
-#from sqlalchemy.sql import text
+from sqlalchemy import create_engine
+from sqlalchemy.sql import text
 import sqlite3
 
 # Configuração do banco de dados usando SQLAlchemy
