@@ -1,18 +1,14 @@
 import streamlit as st
 import pandas as pd
-!pip insall sqlalchemy 
-from sqlalchemy import create_engine
-from sqlalchemy.sql import text
 import sqlite3
 
-# Configuração do banco de dados usando SQLAlchemy
+# Caminho do banco de dados SQLite
 bd = r'C:\Program Files (x86)\sqlite3\BD_REGIONAL.db'
-engine = create_engine(f'sqlite:///{bd}')
 
 # Função para carregar dados do banco de dados
 def load_data():
-    query = text("SELECT * FROM TB_MODALIDADE")
-    with engine.connect() as conn:
+    with sqlite3.connect(bd) as conn:
+        query = "SELECT * FROM TB_MODALIDADE"
         df = pd.read_sql_query(query, conn)
     return df
 
