@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+!pip insall sqlalchemy 
 from sqlalchemy import create_engine
 from sqlalchemy.sql import text
 import sqlite3
